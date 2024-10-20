@@ -4,11 +4,13 @@ import com.xs.common.Result;
 import com.xs.service.RedisService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
 @RestController
+@RequestMapping("/api")
 public class CheckLoginStateController {
 
     @Resource

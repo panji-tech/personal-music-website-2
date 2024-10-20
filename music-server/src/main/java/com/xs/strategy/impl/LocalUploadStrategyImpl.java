@@ -2,6 +2,7 @@ package com.xs.strategy.impl;
 
 import com.xs.enums.FileExtEnum;
 import com.xs.exception.BizException;
+import com.xs.util.PathUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -15,11 +16,11 @@ import java.util.Objects;
 @Service("localUploadStrategyImpl")
 public class LocalUploadStrategyImpl extends AbstractUploadStrategyImpl {
 
-    /**
-     * 本地路径
-     */
-    @Value("${upload.local.path}")
-    private String localPath;
+//    /**
+//     * 本地路径
+//     */
+//    @Value("${upload.local.path}")
+//    private String localPath;
 
     /**
      * 访问url
@@ -27,22 +28,25 @@ public class LocalUploadStrategyImpl extends AbstractUploadStrategyImpl {
     @Value("${upload.local.url}")
     private String localUrl;
 
+    private String staticPath = PathUtil.getClassLoadRootPath() + "/src/main/resources/static/";
+
     @Override
     public Boolean exists(String filePath) {
-        return new File(localPath + filePath).exists();
+        return new File(staticPath + filePath).exists();
     }
 
     @Override
     public void upload(String path, String fileName, InputStream inputStream) throws IOException {
+        String absolutePath = staticPath  + path;
         // 判断目录是否存在
-        File directory = new File(localPath + path);
+        File directory = new File(absolutePath);
         if (!directory.exists()) {
             if (!directory.mkdirs()) {
                 throw new BizException("创建目录失败");
             }
         }
         // 写入文件
-        File file = new File(localPath + path + fileName);
+        File file = new File(absolutePath + fileName);
         String ext = "." + fileName.split("\\.")[1];
         switch (Objects.requireNonNull(FileExtEnum.getFileExt(ext))) {
             case MD, TXT -> {

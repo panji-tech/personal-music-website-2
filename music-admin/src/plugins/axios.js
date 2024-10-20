@@ -2,7 +2,7 @@ import axios from "axios";
 import { Message } from "element-ui";
 
 const request = axios.create({
-  baseURL: "/apk",
+  baseURL: "http://localhost:8889/admin",
   timeout: 5000,
 });
 

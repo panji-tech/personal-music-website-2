@@ -133,7 +133,7 @@
         <el-form-item prop="pic" label="歌曲图片" size="mini">
           <el-upload
             class="avatar-uploader"
-            action="/api/upload"
+            action="http://localhost:8889/api/upload"
             name="pic"
             :multiple="true"
             :auto-upload="true"
@@ -160,7 +160,7 @@
         <el-form-item prop="url" label="歌曲地址" size="mini">
           <el-upload
             class="upload-demo"
-            action="/api/uploadAudio"
+            action="http://localhost:8889/api/uploadAudio"
             name="mp3"
             :multiple="true"
             :auto-upload="true"
@@ -201,7 +201,7 @@
         <el-form-item prop="pic" label="歌曲图片" size="mini">
           <el-upload
             class="avatar-uploader"
-            action="/api/upload"
+            action="http://localhost:8889/api/upload"
             name="pic"
             :multiple="true"
             :auto-upload="true"
@@ -228,7 +228,7 @@
         <el-form-item prop="url" label="歌曲地址" size="mini">
           <el-upload
             class="upload-demo"
-            action="/api/uploadAudio"
+            action="http://localhost:8889/api/uploadAudio"
             name="mp3"
             :multiple="true"
             :auto-upload="true"

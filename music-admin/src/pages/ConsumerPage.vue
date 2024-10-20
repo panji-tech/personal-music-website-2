@@ -156,7 +156,7 @@
         <el-form-item prop="avatar" label="头像" size="mini">
           <el-upload
             class="avatar-uploader"
-            action="/api/upload"
+            action="http://localhost:8889/api/upload"
             name="pic"
             :multiple="true"
             :auto-upload="true"
@@ -252,7 +252,7 @@
         <el-form-item prop="avatar" label="头像" size="mini">
           <el-upload
             class="avatar-uploader"
-            action="/api/upload"
+            action="http://localhost:8889/api/upload"
             name="pic"
             :multiple="true"
             :auto-upload="true"

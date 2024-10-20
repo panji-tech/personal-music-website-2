@@ -4,6 +4,7 @@ import com.xs.enums.FilePathEnum;
 import com.xs.strategy.context.UploadStrategyContext;
 import com.xs.vo.R;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -11,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.annotation.Resource;
 
 @RestController
+@RequestMapping("/api")
 public class UploadController {
 
     @Resource

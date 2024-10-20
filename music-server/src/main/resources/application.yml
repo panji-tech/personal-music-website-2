@@ -16,16 +16,16 @@ spring:
 
   #在windows本地部署不用配置,可以删掉这段配置
   redis:
-    host: #在服务器上则写上服务器的ip地址
+    host: 127.0.0.1 #在服务器上则写上服务器的ip地址
     port: 6379
-    password: #密码(默认没有密码)
+    #password: #密码(默认没有密码)
 
   datasource:
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://ip地址:端口号(默认为3306)/music?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-      username: #用户名
-      password: #密码
+      url: jdbc:mysql://localhost:13306/music?useUnicode=true&characterEncoding=utf8&autoReconnect=true&useSSL=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+      username: root
+      password: root
 
 token:
   expireTime: 259200000
@@ -33,10 +33,9 @@ token:
 
 upload:
   mode: local
-
   local:
     # nginx映射本地文件路径
-    url: http://localhost/
+    url: http://localhost:8889/
     #windows本地：http://localhost/
     #服务器：http://ip地址/ 或 https://域名/
     # 本地文件存储路径

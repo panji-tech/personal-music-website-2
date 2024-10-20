@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import javax.annotation.Resource;
@@ -28,8 +29,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private MyAuthenticationEntryPoint myAuthenticationEntryPoint;
 
 	@Bean
-	public BCryptPasswordEncoder bCryptPasswordEncoder() {
-		return new BCryptPasswordEncoder();
+	public PasswordEncoder bCryptPasswordEncoder() {
+		return new MyPasswordEncoder();
+	}
+
+	public static void main(String[] args) {
+
 	}
 
 	@Override

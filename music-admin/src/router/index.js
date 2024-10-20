@@ -105,7 +105,7 @@ router.beforeEach(async (to, from, next) => {
     let token = localStorage.getItem("token")
     let username = localStorage.getItem("username")
     if (token) {
-      await axios.get(`/api/checkLoginState/${username}`).then(res => {
+      await axios.get(`http://localhost:8889/api/checkLoginState/${username}`).then(res => {
         if (res.data.data) {
           if (to.path === '/login') {
             next({ path: '/' })

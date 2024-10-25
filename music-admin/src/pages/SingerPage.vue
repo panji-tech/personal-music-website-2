@@ -216,6 +216,7 @@
             :multiple="true"
             :auto-upload="true"
             :show-file-list="false"
+            :on-preview="handlePictureCardPreview"
             :on-success="updateAvatarSuccess"
             :before-upload="beforeAvatarUpload"
           >
@@ -494,6 +495,10 @@ export default {
         }
       });
     },
+    handlePictureCardPreview(file) {
+      // 处理图片预览
+      this.form.pic = file.url;
+    },
     updateAvatarSuccess(res) {
       if (res.code === 20000) {
         this.form.pic = res.data;
@@ -511,6 +516,7 @@ export default {
       }
     },
     beforeAvatarUpload(file) {
+      this.registerForm.pic = null;
       const isJPG = file.type === "image/jpeg";
       if (!isJPG) {
         this.$message.warning("上传头像图片只能是 JPG 格式!");

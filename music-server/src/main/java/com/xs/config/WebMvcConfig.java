@@ -23,6 +23,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
 //				.addResourceLocations(("classpath:static/avatar/"));
         registry.addResourceHandler("/avatar/**")
                 .addResourceLocations((("file:" + staticPath + "avatar/")));
+        registry.addResourceHandler("/voice/**")
+                .addResourceLocations((("file:" + staticPath + "voice/")));
 //		registry.addResourceHandler("/txt/**")
 //				.addResourceLocations(staticString + File.separator + "txt" + File.separator);
     }

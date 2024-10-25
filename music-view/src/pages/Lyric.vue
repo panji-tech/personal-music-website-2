@@ -69,6 +69,11 @@ export default {
     ]),
   },
   created() {
+    console.log('歌词ID'+this.id)
+    console.log('歌曲名称：'+this.title)
+    console.log('歌词：'+this)
+    debugger
+    // console.log('歌词url：'+this.url)
     this.lyr = this.lyric;
     this.$store.commit("setCurTime", 0);
   },

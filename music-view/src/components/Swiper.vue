@@ -25,6 +25,7 @@ export default {
     };
   },
   created() {
+    // 轮播图先写死
     this.swiperList = swiperList;
   },
   methods: {

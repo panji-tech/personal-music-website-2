@@ -12,6 +12,9 @@ Vue.component(VePie.name, VePie);
 Vue.component(VeHistogram.name, VeHistogram);
 Vue.component(VeRing.name, VeRing);
 
+Vue.config.devtools = true
+Vue.config.debug = true
+
 // eslint-disable-next-line no-new
 new Vue({
   el: "#app",

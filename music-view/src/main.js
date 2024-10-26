@@ -15,6 +15,9 @@ Vue.use(ElementUI);
 
 Vue.config.productionTip = false;
 
+Vue.config.devtools = true
+Vue.config.debug = true
+
 /* eslint-disable no-new */
 new Vue({
   el: "#app",

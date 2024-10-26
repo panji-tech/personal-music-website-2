@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+<!--    轮播图-->
     <swiper />
     <div class="section" v-for="(item, index) in songLists" :key="index">
       <div v-show="!consumerName" class="section-title">{{ item.name }}</div>

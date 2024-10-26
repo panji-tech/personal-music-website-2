@@ -5,6 +5,12 @@ const defaultSettings = require('./src/settings.js')
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
+module.exports = {
+  configureWebpack: config => {
+    config.devtool = false
+  },
+  productionSourceMap: false
+}
 
 const name = defaultSettings.title // page title
 

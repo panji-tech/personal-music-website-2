@@ -6,6 +6,14 @@ function resolve(dir) {
   return path.join(__dirname, dir);
 }
 
+module.exports = {
+  configureWebpack: config => {
+    config.devtool = false
+  },
+  productionSourceMap: false
+}
+
+
 const name = defaultSettings.title; // page title
 
 // If your port is set to 80,

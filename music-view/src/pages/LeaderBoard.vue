@@ -1,21 +1,31 @@
 <template>
   <div class="leader-board-album">
-    <div class="album-slide">
-      <div class="leader-board-img">
-        <img
-          src="https://www.freemusic.ltd/109951166952713766.jpg"
-          alt="图片"
-        />
+    <el-row>
+      <div class="album-slide">
+          <div class="leader-board-img">
+            <img
+                :src="listOfSongs[0].pic"
+                alt="图片"
+            />
+          </div>
+          <div style="text-align: center">
+            <h1 class="leader-board-title">第一名歌曲: {{listOfSongs[0].name}}</h1>
+<!--            <h2 class="leader-board-title">第一名歌曲名称: {{listOfSongs[0].name}}</h2>-->
+          </div>
+
+
       </div>
-    </div>
-    <div class="album-content">
-      <div class="intro">
-        <h2>播放量排名前50的歌曲</h2>
+      <div class="album-content">
+        <div class="intro">
+          <h2>播放量排名前50的歌曲</h2>
+        </div>
+        <album-content :song-lists="listOfSongs">
+          <template slot="title">歌曲排行榜</template>
+        </album-content>
       </div>
-      <album-content :song-lists="listOfSongs">
-        <template slot="title">歌曲排行榜</template>
-      </album-content>
-    </div>
+    </el-row>
+
+
   </div>
 </template>
 
